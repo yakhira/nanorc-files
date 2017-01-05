@@ -1,0 +1,18 @@
+## Here is an example for yml files.
+
+syntax "yml" "\.yml$"
+
+color brightblue    "\w+:"
+color green         "tasks:|hosts:|become:"
+color brightred	    "\w+="
+color brightred     "with_items:|block:|register:"
+color brightred     "[[:space:]][[:space:]][[:space:]][[:space:]][[:space:]].*:"
+
+# Comments
+color brightblue "(^|[[:space:]]+)#.*$"
+color cyan "^[[:space:]]*##.*$"
+
+color brightyellow "[[:space:]][[:space:]][[:space:]]-[[:space:]].*"
+color brightyellow "=[a-zA-Z0-9\-\/\.\_]+"
+color brightyellow start="\{\{" end="\}\}"
+color white "=|:|-"
