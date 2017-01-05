@@ -1,18 +1,18 @@
 ## Here is an example for yml files.
 
-syntax "yml" "\.yml$"
+syntax "Vagrantfile" "Vagrantfile"
 
-color brightblue    "\w+:"
-color green         "tasks:|hosts:|become:"
-color brightred	    "\w+="
-color brightred     "with_items:|block:|register:"
-color brightred     "[[:space:]][[:space:]][[:space:]][[:space:]][[:space:]].*:"
+#Base directives
+color brightred   "\w+\.\w+"
+color green "[a-zA-Z0-9]+\.vm\.[a-zA-Z0-9]+|end|Vagrant.configure"
+
+#Parametrs
+color yellow start="\"" end="\""
+color green "override\.\w+.\w+"
+color brightred start="\|" end="\|"
+color brightgreen ":\w+" 
 
 # Comments
-color brightblue "(^|[[:space:]]+)#.*$"
+color blue "(^|[[:space:]]+)#.*$"
 color cyan "^[[:space:]]*##.*$"
 
-color brightyellow "[[:space:]][[:space:]][[:space:]]-[[:space:]].*"
-color brightyellow "=[a-zA-Z0-9\-\/\.\_]+"
-color brightyellow start="\{\{" end="\}\}"
-color white "=|:|-"
