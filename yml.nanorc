@@ -2,19 +2,20 @@
 
 syntax "yml" "\.yml$"
 
-color brightblue    "\w+:"
-color green         "tasks:|hosts:|become:"
+color brightcyan    "\w+:"
+color green         "tasks:|hosts:|become:|vars:"
 color brightred	    "\w+="
 color brightred     "with_items:|block:|register:"
 
-color brightyellow "[[:space:]][[:space:]][[:space:]][[:space:]][[:space:]]\w+:.*"
+color brightyellow  "[[:space:]][[:space:]][[:space:]][[:space:]][[:space:]]\w+:.*"
 color brightred     "[[:space:]][[:space:]][[:space:]][[:space:]][[:space:]].*:"
 
-# Comments
-color brightblue "(^|[[:space:]]+)#.*$"
-color cyan "^[[:space:]]*##.*$"
-
-color brightyellow "[[:space:]][[:space:]][[:space:]]-[[:space:]].*"
+color brightyellow "[[:space:]][[:space:]][[:space:]]+-[[:space:]].*"
 color brightyellow "=[a-zA-Z0-9\-\/\.\_]+"
 color brightyellow start="\{\{" end="\}\}"
-color white "=|:|-|\|"
+color brightyellow start="\"" end="\""
+color brightyellow start="\[" end="\]"
+color white "=|:|-[[:space:]]|\|"
+
+# Comments
+color blue "#.*"
