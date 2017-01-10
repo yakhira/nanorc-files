@@ -3,9 +3,9 @@
 syntax "yml" "\.yml$"
 
 color brightcyan    "\w+:"
-color green         "tasks:|hosts:|become:|vars:"
+color green         "[a-z]+tasks:|hosts:|become:|vars:"
 color brightred	    "\w+="
-color brightred     "with_items:|block:|register:"
+color brightred     "with_[a-z]+:|block:|register:"
 
 color brightyellow  "[[:space:]][[:space:]][[:space:]][[:space:]][[:space:]]\w+:.*"
 color brightred     "[[:space:]][[:space:]][[:space:]][[:space:]][[:space:]].*:"
