@@ -1,18 +1,14 @@
-## Here is an example for yml files.
+# Here is an example for yml files.
 
 syntax "Vagrantfile" "Vagrantfile"
 
 #Base directives
-color brightred   "\w+\.\w+"
-color green "[a-zA-Z0-9]+\.vm\.[a-zA-Z0-9]+|end|Vagrant.configure"
+color green "[a-zA-Z0-9]+\.vm\.[a-zA-Z0-9]+|end|Vagrant.configure|config.vm.define|\|.+\||do"
 
-#Parametrs
-color yellow start="\"" end="\""
-color green "override\.\w+.\w+"
-color brightred start="\|" end="\|"
-color brightgreen ":\w+" 
+#Parameters
+color brightgreen ":\w+"
+color brightyellow ".+\s+=\s+.+"
 
 # Comments
 color blue "(^|[[:space:]]+)#.*$"
 color cyan "^[[:space:]]*##.*$"
-
